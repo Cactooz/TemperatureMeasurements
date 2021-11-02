@@ -40,14 +40,20 @@ public class Temperatures {
     }
 
     public void output() {
-        //Write the output to the console for each week
-        for(byte week = 0; week < weeks; week++)
-            System.out.println("Vecka: " + (week+1) + ", Högsta temperaturen: " + highestTemperature(week) + ", Lägsta temperaturen: " + lowestTemperature(week) + ", Medeltemperaturen: " + averageTemperature(week));
-
         //Make the arrays for taking total data
         highTemps = new float[weeks];
         lowTemps = new float[weeks];
         averageTemps = new float[weeks];
+
+        //Write the output to the console for each week
+        for(byte week = 0; week < weeks; week++)
+            System.out.println("Vecka: " + (week+1) + ", Högsta temperaturen: " + highestTemperature(week) + ", Lägsta temperaturen: " + lowestTemperature(week) + ", Medeltemperaturen: " + averageTemperature(week));
+
+        //Sort the arrays
+        Arrays.sort(highTemps);
+        Arrays.sort(lowTemps);
+
+        System.out.println("Totalt, Högsta temperaturen: " + highTemps[highTemps.length-1] + ", Lägsta temperaturen: " + lowTemps[0] + ", Medeltemperaturen: ");
 
     }
 
@@ -55,6 +61,9 @@ public class Temperatures {
     private float highestTemperature(byte weekNumber) {
         //Get the last value from the sorted array
         float highestTemp = sortTemps(weekNumber)[sortTemps(weekNumber).length-1];
+
+        //Add the highestTemp into the highTemps array
+        highTemps[weekNumber] = highestTemp;
         
         return highestTemp;
     }
@@ -63,7 +72,10 @@ public class Temperatures {
     private float lowestTemperature(byte weekNumber) {
         //Get the first value from the sorted array
         float lowestTemp = sortTemps(weekNumber)[0];
-        
+
+        //Add the lowestTemp into the lowTemps array
+        lowTemps[weekNumber] = lowestTemp;
+
         return lowestTemp;
     }
     
