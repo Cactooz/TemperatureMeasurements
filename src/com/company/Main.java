@@ -9,5 +9,6 @@ public class Main {
         //Run the methods in temps
         temps.input();
         temps.output();
+
     }
 }

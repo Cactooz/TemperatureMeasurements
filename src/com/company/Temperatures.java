@@ -7,6 +7,7 @@ public class Temperatures {
 
     byte weeks, measurements;
     float[][] temps;
+    float[] highTemps, lowTemps, averageTemps;
 
     public void input() {
         //Scanner for input
@@ -42,6 +43,12 @@ public class Temperatures {
         //Write the output to the console for each week
         for(byte week = 0; week < weeks; week++)
             System.out.println("Vecka: " + (week+1) + ", Högsta temperaturen: " + highestTemperature(week) + ", Lägsta temperaturen: " + lowestTemperature(week) + ", Medeltemperaturen: " + averageTemperature(week));
+
+        //Make the arrays for taking total data
+        highTemps = new float[weeks];
+        lowTemps = new float[weeks];
+        averageTemps = new float[weeks];
+
     }
 
     //Get the highest temperature for the week
