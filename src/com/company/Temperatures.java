@@ -53,7 +53,7 @@ public class Temperatures {
         Arrays.sort(highTemps);
         Arrays.sort(lowTemps);
 
-        System.out.println("Totalt, Högsta temperaturen: " + highTemps[highTemps.length-1] + ", Lägsta temperaturen: " + lowTemps[0] + ", Medeltemperaturen: ");
+        System.out.println("Totalt, Högsta temperaturen: " + highTemps[highTemps.length-1] + ", Lägsta temperaturen: " + lowTemps[0] + ", Medeltemperaturen: " + average(averageTemps));
 
     }
 
@@ -101,8 +101,23 @@ public class Temperatures {
         //Add all the temperatures together
         for(byte i = 0; i < measurements; i++)
             tempsSum += temps[weekNumber][i];
-        
+
+        //Add the average temp to the averageTemps list
+        averageTemps[weekNumber] = tempsSum / measurements;
+
         //Divide the total temperatures with the amount of measurements
         return tempsSum / measurements;
+    }
+
+    //Get the average of the list
+    private float average(float[] array) {
+
+        float sum = 0;
+
+        //Add all the data together
+        for(byte i = 0; i < array.length; i++)
+            sum += array[i];
+
+        return sum/array.length;
     }
 }
