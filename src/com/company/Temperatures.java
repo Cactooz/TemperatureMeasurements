@@ -79,7 +79,7 @@ public class Temperatures {
 	}
 	
 	//Get the highest temperature for the week
-	private float highestTemperature(float[] weekTemps) {
+	private float getLastArrayValue(float[] weekTemps) {
 		return weekTemps[weekTemps.length-1];
 	}
 	
