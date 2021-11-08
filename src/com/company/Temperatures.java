@@ -79,12 +79,9 @@ public class Temperatures {
     }
 
     //Get the highest temperature for the week
-    private float highestTemperature(byte weekNumber) {
+    private float highestTemperature(float[] weekTemps) {
         //Get the last value from the sorted array
-        float highestTemp = sortTemps(weekNumber)[sortTemps(weekNumber).length-1];
-
-        //Add the highestTemp into the highTemps array
-        highTemps[weekNumber] = highestTemp;
+        float highestTemp = weekTemps[weekTemps.length-1];
         
         return highestTemp;
     }
