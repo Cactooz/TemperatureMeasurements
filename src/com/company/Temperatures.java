@@ -57,6 +57,20 @@ public class Temperatures {
 
     }
 
+    //Get a single week of data
+    private float[] getSingleWeekTemps(byte weekNumber) {
+        //A new array for a single week
+        float[] singleWeekTemps = new float[temps.length+1];
+
+        //Add all the measurements from the week into the new array
+        for(byte measurement = 0; measurement < measurements; measurement++) {
+            singleWeekTemps[measurement] = temps[weekNumber][measurement];
+        }
+
+        return singleWeekTemps;
+    }
+
+
     //Get the highest temperature for the week
     private float highestTemperature(byte weekNumber) {
         //Get the last value from the sorted array
