@@ -88,31 +88,15 @@ public class Temperatures {
 		return weekTemps[0];
 	}
 	
-	//Get the average temperature of the week
-	private float averageTemperature(byte weekNumber) {
-		
-		float tempsSum = 0;
-		
-		//Add all the temperatures together
-		for(byte i = 0; i < measurements; i++)
-			tempsSum += temps[weekNumber][i];
-		
-		//Add the average temp to the averageTemps list
-		averageTemps[weekNumber] = tempsSum / measurements;
-		
-		//Divide the total temperatures with the amount of measurements
-		return tempsSum / measurements;
-	}
-	
-	//Get the average of the list
-	private float average(float[] array) {
-		
+	//Get the average of an array
+	private float averageArray(float[] inputArray) {
 		float sum = 0;
 		
-		//Add all the data together
-		for(byte i = 0; i < array.length; i++)
-			sum += array[i];
+		//Add all array values together
+		for(byte i = 0; i < inputArray.length; i++)
+			sum += inputArray[i];
 		
-		return sum/array.length;
+		//Divide the total with the amount of divisions
+		return sum / inputArray.length;
 	}
 }
