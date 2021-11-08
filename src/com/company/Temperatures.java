@@ -75,7 +75,7 @@ public class Temperatures {
         //Sort the array
         Arrays.sort(weekTemps);
 
-        return(weekTemps);
+        return weekTemps;
     }
 
     //Get the highest temperature for the week
