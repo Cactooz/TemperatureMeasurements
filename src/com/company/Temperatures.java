@@ -80,10 +80,7 @@ public class Temperatures {
 
     //Get the highest temperature for the week
     private float highestTemperature(float[] weekTemps) {
-        //Get the last value from the sorted array
-        float highestTemp = weekTemps[weekTemps.length-1];
-        
-        return highestTemp;
+        return weekTemps[weekTemps.length-1];
     }
     
     //Get the lowest temperature for the week
