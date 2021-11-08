@@ -58,7 +58,7 @@ public class Temperatures {
 	}
 	
 	//Get a single week of data
-	private float[] getSingleWeekTemps(byte weekNumber) {
+	private float[] getSingleArrayDimension(byte weekNumber) {
 		//A new array for a single week
 		float[] singleWeekTemps = new float[temps.length+1];
 		
@@ -71,7 +71,7 @@ public class Temperatures {
 	}
 	
 	//Sort the temperatures in the array
-	private float[] sortTemps(float[] weekTemps) {
+	private float[] sortArray(float[] weekTemps) {
 		//Sort the array
 		Arrays.sort(weekTemps);
 		
