@@ -70,6 +70,13 @@ public class Temperatures {
         return singleWeekTemps;
     }
 
+    //Sort the temperatures in the array
+    private float[] sortTemps(float[] weekTemps) {
+        //Sort the array
+        Arrays.sort(weekTemps);
+
+        return(weekTemps);
+    }
 
     //Get the highest temperature for the week
     private float highestTemperature(byte weekNumber) {
@@ -91,20 +98,6 @@ public class Temperatures {
         lowTemps[weekNumber] = lowestTemp;
 
         return lowestTemp;
-    }
-    
-    //Sort the temperatures in the array
-    private float[] sortTemps(byte weekNumber) {
-        float[] sortedTemps = new float[temps.length+1];
-    
-        //Add all the temperature elements from the week into an array
-        for(byte measurement = 0; measurement < measurements; measurement++) {
-            sortedTemps[measurement] = temps[weekNumber][measurement];
-        }
-        //Sort the array
-        Arrays.sort(sortedTemps);
-        
-        return(sortedTemps);
     }
     
     //Get the average temperature of the week
