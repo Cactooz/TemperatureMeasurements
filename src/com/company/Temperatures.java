@@ -47,7 +47,7 @@ public class Temperatures {
 		
 		//Write the output to the console for each week
 		for(byte week = 0; week < weeks; week++)
-			System.out.println("Vecka: " + (week+1) + ", Högsta temperaturen: " + highestTemperature(week) + ", Lägsta temperaturen: " + lowestTemperature(week) + ", Medeltemperaturen: " + averageTemperature(week));
+			System.out.println("Vecka: " + (week+1) + ", Högsta temperaturen: " + getLastArrayValue(sortArray(getSingleArrayDimension(week))) + ", Lägsta temperaturen: " + getFirstArrayValue(sortArray(getSingleArrayDimension(week))) + ", Medeltemperaturen: " + averageArray(getSingleArrayDimension(week)));
 		
 		//Sort the arrays
 		Arrays.sort(highTemps);
