@@ -84,7 +84,7 @@ public class Temperatures {
 	}
 	
 	//Get the lowest temperature for the week
-	private float lowestTemperature(float[] weekTemps) {
+	private float getFirstArrayValue(float[] weekTemps) {
 		return weekTemps[0];
 	}
 	
