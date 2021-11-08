@@ -87,12 +87,9 @@ public class Temperatures {
     }
     
     //Get the lowest temperature for the week
-    private float lowestTemperature(byte weekNumber) {
+    private float lowestTemperature(float[] weekTemps) {
         //Get the first value from the sorted array
-        float lowestTemp = sortTemps(weekNumber)[0];
-
-        //Add the lowestTemp into the lowTemps array
-        lowTemps[weekNumber] = lowestTemp;
+        float lowestTemp = weekTemps[0];
 
         return lowestTemp;
     }
