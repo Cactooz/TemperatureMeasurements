@@ -7,7 +7,6 @@ public class Temperatures {
 	
 	byte weeks, measurements;
 	float[][] temps;
-	float[] highTemps, lowTemps, averageTemps;
 	
 	public void input() {
 		//Scanner for input
@@ -41,9 +40,9 @@ public class Temperatures {
 	
 	public void output() {
 		//Make the arrays for taking total data
-		highTemps = new float[weeks];
-		lowTemps = new float[weeks];
-		averageTemps = new float[weeks];
+		float[] highTemps = new float[weeks];
+		float[] lowTemps = new float[weeks];
+		float[] averageTemps = new float[weeks];
 		float totalTemps = 0;
 		
 		//Write the output to the console for each week
