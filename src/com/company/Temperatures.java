@@ -88,6 +88,17 @@ public class Temperatures {
 		return weekTemps[0];
 	}
 	
+	//Get the sum of all values in an array
+	private float getArrayValueSum(float[] inputArray) {
+		float sum = 0;
+		
+		//Add all array values together
+		for(byte i = 0; i < inputArray.length; i++)
+			sum += inputArray[i];
+		
+		return sum;
+	}
+	
 	//Get the average of an array
 	private float averageArray(float[] inputArray) {
 		float sum = 0;
