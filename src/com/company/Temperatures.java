@@ -47,12 +47,18 @@ public class Temperatures {
 		
 		//Write the output to the console for each week
 		for(byte week = 0; week < weeks; week++) {
-			System.out.println("Vecka: " + (week+1) + ", Högsta temperaturen: " + getLastArrayValue(sortArray(getSingleArrayDimension(week))) + ", Lägsta temperaturen: " + getFirstArrayValue(sortArray(getSingleArrayDimension(week))) + ", Medeltemperaturen: " + averageArray(getSingleArrayDimension(week)) + ", Temperatursumma: " + getArrayValueSum(getSingleArrayDimension(week)));
 			
-			highTemps[week] = getLastArrayValue(sortArray(getSingleArrayDimension(week)));
-			lowTemps[week] = getFirstArrayValue(sortArray(getSingleArrayDimension(week)));
-			averageTemps[week] = averageArray(getSingleArrayDimension(week));
-			totalTemps += getArrayValueSum(getSingleArrayDimension(week));
+			float highestTemp = getLastArrayValue(sortArray(getSingleArrayDimension(week)));
+			float lowestTemp = getFirstArrayValue(sortArray(getSingleArrayDimension(week)));
+			float averageTemp = averageArray(getSingleArrayDimension(week));
+			float totalTemp = getArrayValueSum(getSingleArrayDimension(week));
+			
+			System.out.println("Vecka: " + (week+1) + ", Högsta temperaturen: " + highestTemp + ", Lägsta temperaturen: " + lowestTemp + ", Medeltemperaturen: " + averageTemp + ", Temperatursumma: " + totalTemp);
+			
+			highTemps[week] = highestTemp;
+			lowTemps[week] = lowestTemp;
+			averageTemps[week] = averageTemp;
+			totalTemps += totalTemp;
 		}
 		
 		//Sort the arrays
