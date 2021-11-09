@@ -101,13 +101,7 @@ public class Temperatures {
 	
 	//Get the average of an array
 	private float averageArray(float[] inputArray) {
-		float sum = 0;
-		
-		//Add all array values together
-		for(byte i = 0; i < inputArray.length; i++)
-			sum += inputArray[i];
-		
 		//Divide the total with the amount of divisions
-		return sum / inputArray.length;
+		return getArrayValueSum(inputArray) / inputArray.length;
 	}
 }
