@@ -71,21 +71,21 @@ public class Temperatures {
 	}
 	
 	//Sort the temperatures in the array
-	private float[] sortArray(float[] weekTemps) {
+	private float[] sortArray(float[] inputArray) {
 		//Sort the array
-		Arrays.sort(weekTemps);
+		Arrays.sort(inputArray);
 		
-		return weekTemps;
+		return inputArray;
 	}
 	
 	//Get the highest temperature for the week
-	private float getLastArrayValue(float[] weekTemps) {
-		return weekTemps[weekTemps.length-1];
+	private float getLastArrayValue(float[] inputArray) {
+		return inputArray[inputArray.length-1];
 	}
 	
 	//Get the lowest temperature for the week
-	private float getFirstArrayValue(float[] weekTemps) {
-		return weekTemps[0];
+	private float getFirstArrayValue(float[] inputArray) {
+		return inputArray[0];
 	}
 	
 	//Get the sum of all values in an array
