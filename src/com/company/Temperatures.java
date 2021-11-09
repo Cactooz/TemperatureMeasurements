@@ -72,7 +72,7 @@ public class Temperatures {
 	//Get a single week of data
 	private float[] getSingleArrayDimension(byte dimension) {
 		//A new array for a single week
-		float[] singleWeekTemps = new float[temps.length+1];
+		float[] singleWeekTemps = new float[temps[dimension].length];
 		
 		//Add all the measurements from the week into the new array
 		for(byte measurement = 0; measurement < measurements; measurement++) {
