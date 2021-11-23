@@ -8,7 +8,7 @@ public class Temperatures {
 	byte weeks, measurements;
 	float[][] temps;
 	
-	public void Input() {
+	public void input() {
 		//Scanner for input
 		Scanner in = new Scanner(System.in);
 		
@@ -38,7 +38,7 @@ public class Temperatures {
 		
 	}
 	
-	public void Output() {
+	public void output() {
 		//Make the arrays for taking total data
 		float[] highTemps = new float[weeks];
 		float[] lowTemps = new float[weeks];
@@ -48,13 +48,13 @@ public class Temperatures {
 		//Write the output to the console for each week
 		for(byte week = 0; week < weeks; week++) {
 			
-			float[] weeklyArray = GetSingleArrayDimension(week);
-			SortArray(weeklyArray);
+			float[] weeklyArray = getSingleArrayDimension(week);
+			sortArray(weeklyArray);
 			
-			float highestTemp = GetLastArrayValue(weeklyArray);
-			float lowestTemp = GetFirstArrayValue(weeklyArray);
-			float averageTemp = AverageArray(weeklyArray);
-			float totalTemp = GetArrayValueSum(weeklyArray);
+			float highestTemp = getLastArrayValue(weeklyArray);
+			float lowestTemp = getFirstArrayValue(weeklyArray);
+			float averageTemp = averageArray(weeklyArray);
+			float totalTemp = getArrayValueSum(weeklyArray);
 			
 			System.out.println("Vecka: " + (week+1) + ", Högsta temperaturen: " + highestTemp + ", Lägsta temperaturen: " + lowestTemp + ", Medeltemperaturen: " + averageTemp + ", Temperatursumma: " + totalTemp);
 			
@@ -65,15 +65,15 @@ public class Temperatures {
 		}
 		
 		//Sort the arrays
-		SortArray(highTemps);
-		SortArray(lowTemps);
+		sortArray(highTemps);
+		sortArray(lowTemps);
 		
-		System.out.println("Totalt, Högsta temperaturen: " + highTemps[highTemps.length-1] + ", Lägsta temperaturen: " + lowTemps[0] + ", Medeltemperaturen: " + AverageArray(averageTemps) + ", Temperatursumma: " + totalTemps);
+		System.out.println("Totalt, Högsta temperaturen: " + highTemps[highTemps.length-1] + ", Lägsta temperaturen: " + lowTemps[0] + ", Medeltemperaturen: " + averageArray(averageTemps) + ", Temperatursumma: " + totalTemps);
 		
 	}
 	
 	//Get a single week of data
-	private float[] GetSingleArrayDimension(byte dimension) {
+	private float[] getSingleArrayDimension(byte dimension) {
 		//A new array for a single week
 		float[] singleWeekTemps = new float[temps[dimension].length];
 		
@@ -86,7 +86,7 @@ public class Temperatures {
 	}
 	
 	//Sort the temperatures in the array
-	private float[] SortArray(float[] inputArray) {
+	private float[] sortArray(float[] inputArray) {
 		//Sort the array
 		Arrays.sort(inputArray);
 		
@@ -94,17 +94,17 @@ public class Temperatures {
 	}
 	
 	//Get the highest temperature for the week
-	private float GetLastArrayValue(float[] inputArray) {
+	private float getLastArrayValue(float[] inputArray) {
 		return inputArray[inputArray.length-1];
 	}
 	
 	//Get the lowest temperature for the week
-	private float GetFirstArrayValue(float[] inputArray) {
+	private float getFirstArrayValue(float[] inputArray) {
 		return inputArray[0];
 	}
 	
 	//Get the sum of all values in an array
-	private float GetArrayValueSum(float[] inputArray) {
+	private float getArrayValueSum(float[] inputArray) {
 		float sum = 0;
 		
 		//Add all array values together
@@ -115,8 +115,8 @@ public class Temperatures {
 	}
 	
 	//Get the average of an array
-	private float AverageArray(float[] inputArray) {
+	private float averageArray(float[] inputArray) {
 		//Divide the total with the amount of divisions
-		return GetArrayValueSum(inputArray) / inputArray.length;
+		return getArrayValueSum(inputArray) / inputArray.length;
 	}
 }
