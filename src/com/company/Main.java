@@ -7,8 +7,8 @@ public class Main {
 		Temperatures temps = new Temperatures();
 		
 		//Run the methods in temps
-		temps.input();
-		temps.output();
+		temps.Input();
+		temps.Output();
 		
 	}
 }
